@@ -1,0 +1,7 @@
+# Ignore artifacts:
+.husky
+dist
+commitlint.config.js
+package.json
+package-lock.json
+tsconfig.json
