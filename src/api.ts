@@ -1,8 +1,8 @@
 import { Router } from "express";
-import usersRouter from "./modules/auth/_api";
+import authRouter from "./modules/auth/_api";
 
 const router = Router();
 
-router.use(usersRouter);
+router.use(authRouter);
 
 export default router;
