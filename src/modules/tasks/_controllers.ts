@@ -4,6 +4,7 @@ import { addTaskSchema, editTaskSchema, listTasksSchema } from "./_schemas";
 import { AddTaskData, ListTasksData } from "./_types";
 import addTask from "./add-task";
 import completeTask from "./complete-task";
+import countTasksByUser from "./count-tasks-by-user";
 import editTask from "./edit-task";
 import listTasks from "./list-tasks";
 import removeTask from "./remove-task";
@@ -133,6 +134,18 @@ export const postCompleteTask: Handler = [
                     _id: req.params.id,
                 });
             }
+
+            res.status(200).json({ data });
+        } catch (error) {
+            next(error);
+        }
+    },
+];
+
+export const getCountTasksByUser: Handler = [
+    async (req, res, next) => {
+        try {
+            const data = await countTasksByUser();
 
             res.status(200).json({ data });
         } catch (error) {
