@@ -5,7 +5,6 @@ export const addUserSchema = {
     body: Joi.object({
         firstName: Joi.string().trim().required(),
         lastName: Joi.string().trim().required(),
-        username: Joi.string().trim().min(6).required(),
         email: Joi.string().email().required(),
         role: Joi.string().valid(UserRole.ADMIN, UserRole.USER),
         password: Joi.string().trim().min(6).required(),
@@ -32,7 +31,6 @@ export const editUserSchema = {
     body: Joi.object({
         firstName: Joi.string().trim().required(),
         lastName: Joi.string().trim().required(),
-        username: Joi.string().trim().min(6).required(),
         email: Joi.string().email().required(),
         role: Joi.string().valid(UserRole.ADMIN, UserRole.USER),
     }),

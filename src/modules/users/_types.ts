@@ -3,7 +3,6 @@ import { SortOrder, UserRole } from "../../shared/types";
 export type AddUserData = {
     firstName: string;
     lastName: string;
-    username: string;
     email: string;
     role: UserRole;
     password: string;
