@@ -5,6 +5,7 @@
   "type": "commonjs",
   "main": "dist/index.js",
   "scripts": {
+    "flash":"npm install && npm run build && npm start",
     "build": "rimraf dist && tsc",
     "preserve": "npm run build",
     "serve": "cross-env NODE_ENV=development concurrently \"tsc --watch\" \"nodemon -q dist/index.js\"",
