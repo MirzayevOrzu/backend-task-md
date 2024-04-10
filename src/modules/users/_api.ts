@@ -1,5 +1,6 @@
 import express from "express";
 import {
+    deleteUser,
     getProfile,
     getUser,
     getUsers,
@@ -23,6 +24,11 @@ usersRouter.patch(
     patchUser
 );
 usersRouter.patch("/users/profile", isLoggedIn, patchProfile);
-usersRouter.delete("/users/:id", isLoggedIn, hasRole([UserRole.ADMIN]));
+usersRouter.delete(
+    "/users/:id",
+    isLoggedIn,
+    hasRole([UserRole.ADMIN]),
+    deleteUser
+);
 
 export default usersRouter;
