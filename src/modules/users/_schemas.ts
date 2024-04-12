@@ -29,9 +29,9 @@ export const listUsersSchema = {
 
 export const editUserSchema = {
     body: Joi.object({
-        firstName: Joi.string().trim().required(),
-        lastName: Joi.string().trim().required(),
-        email: Joi.string().email().required(),
+        firstName: Joi.string().trim(),
+        lastName: Joi.string().trim(),
+        email: Joi.string().email(),
         role: Joi.string().valid(UserRole.ADMIN, UserRole.USER),
     }),
 };
