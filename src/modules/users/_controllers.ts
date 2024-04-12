@@ -86,7 +86,7 @@ export const patchProfile: Handler = [
 export const deleteUser: Handler = [
     async (req, res, next) => {
         try {
-            const data = await removeUser(req.user!.id);
+            const data = await removeUser(req.params!.id);
 
             res.status(200).json({ data });
         } catch (error) {
