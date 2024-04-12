@@ -19,8 +19,6 @@ app.use(handleErrors);
 
 connectDb()
     .then(() => {
-        console.log("Connected to DB");
-
         app.listen(config.port, () => {
             console.log(`Server is running on http://localhost:${config.port}`);
         });
