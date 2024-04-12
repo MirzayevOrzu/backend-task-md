@@ -11,3 +11,9 @@ export function connectDb() {
             return;
         });
 }
+
+export function disconnectDb() {
+    return mongoose.disconnect().then(() => {
+        console.log("Disconnected from DB");
+    });
+}
