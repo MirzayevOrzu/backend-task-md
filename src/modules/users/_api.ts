@@ -17,8 +17,8 @@ usersRouter.use(isLoggedIn);
 
 usersRouter.post("/users", hasRole([UserRole.ADMIN]), postUser);
 usersRouter.get("/users", hasRole([UserRole.ADMIN]), getUsers);
-usersRouter.get("/users/:id", hasRole([UserRole.ADMIN]), getUser);
 usersRouter.get("/users/profile", getProfile);
+usersRouter.get("/users/:id", hasRole([UserRole.ADMIN]), getUser);
 usersRouter.patch("/users/:id", hasRole([UserRole.ADMIN]), patchUser);
 usersRouter.patch("/users/profile", patchProfile);
 usersRouter.delete("/users/:id", hasRole([UserRole.ADMIN]), deleteUser);
